@@ -11,5 +11,5 @@ end
 
 post '/post-receive' do
   branch = JSON.parse(params[:payload])['ref'].split('/').pop
-  log = Logger.new('log.txt').info(`./update_branch.sh #{branch}`)
+  Logger.new('log.txt').info(`./update_branch.sh #{branch}`)
 end
